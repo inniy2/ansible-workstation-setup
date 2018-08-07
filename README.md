@@ -91,7 +91,7 @@ ansible_ssh_pass=vagrant
 
 
 ```bash
-vim ~/playbooks/ansible-workstation/group_vars/workstation.yml
+vim ~/playbooks/ansible-workstation-setup/group_vars/workstation.yml
 
 ---
 home_dir: "/Users/XXXX"
@@ -114,3 +114,36 @@ node_directories:
     ip: 192.168.33.16
 ```
 
+
+```bash
+vim ~/playbooks/ansible-workstation-setup/group_vars/vagrant.yml
+
+---
+# MySQL
+mysql_download_version: "mysql-5.7.18-linux-glibc2.5-x86_64"
+
+mysql_root_db_pass: masteryoda
+
+mysql_instance_name: "cloud101"
+
+mysql_port: 3301
+
+mysql_bind_address: "0.0.0.0"
+
+mysql_instance_dir: "/MYSQL/{{ mysql_instance_name }}"
+
+mysql_conf_dir: "{{ mysql_instance_dir }}/var"
+
+mysql_conf_file: "my_{{ mysql_instance_name }}.cnf"
+
+mysql_socket: "/usr/local/mysql/sock/{{ mysql_instance_name }}.sock"
+
+mysql_client: "{{ mysql_instance_dir }}/product/bin/mysql"
+
+mysql_home_dir: "/usr/local/mysql"
+
+
+# MHA
+mha_home_dir: "/usr/local/mha"
+
+```

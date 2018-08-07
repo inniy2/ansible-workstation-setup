@@ -8,8 +8,8 @@
 4. Python: `2.7.10`  
 5. Pipenv: `11.9.0`  
 6. Virtualenv:  
-  - Python: `2.7.10`  
-  - Ansible: `2.4.6`  
+  - Python: `3.6.5`  
+  - Ansible: `2.5.1`  
   
 
 - - - -  

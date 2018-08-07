@@ -1,0 +1,26 @@
+---
+# deploy-os
+- hosts: workstation
+  become: no
+
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}:$PATH"
+
+  roles:
+    - deploy-os
+
+
+# ansible-common
+- hosts: vagrant
+  become: yes
+
+  roles:
+    - ansible-common
+
+
+# os-setup
+- hosts: vagrant
+  become: yes
+
+  roles:
+    - os-setup

@@ -1,6 +1,5 @@
 ---
-# This play book deploy OS to Vagrant
-
+# deploy-os
 - hosts: workstation
   become: no
 
@@ -9,3 +8,11 @@
 
   roles:
     - deploy-os
+
+
+# ansible-common
+- hosts: vagrant
+  become: yes
+
+  roles:
+    - ansible-common

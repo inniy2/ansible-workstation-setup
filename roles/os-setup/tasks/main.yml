@@ -1,0 +1,31 @@
+---  
+- name: Create MySQL group
+  group:
+    name: mysql
+    gid: 55000
+
+- name: Create MySQL user
+  user:
+    name: mysql
+    comment: mysql-user
+    uid: 55000
+    group: mysql
+    shell: /bin/bash
+    create_home: True
+    home: "{{ mysql_home_dir }}"
+
+- name: Create MHA group
+  group:
+    name: dbamha
+    gid: 56000
+
+- name: Create MHA user
+  user:
+    name: dbamha
+    comment: mha-user
+    uid: 56000
+    group: mysql
+    shell: /bin/bash
+    create_home: True
+    home: "{{ mha_home_dir }}"
+

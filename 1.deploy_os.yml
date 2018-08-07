@@ -1,0 +1,10 @@
+---
+# This play book deploy OS to Vagrant
+- hosts: workstation
+  become: no
+
+  environment:
+    PATH: "/usr/local/bin:{{ ansible_env.PATH }}:$PATH"
+
+  roles:
+    - deploy-os

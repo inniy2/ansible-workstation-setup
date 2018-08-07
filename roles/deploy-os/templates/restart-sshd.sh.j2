@@ -1,0 +1,22 @@
+#!/bin/bash
+
+sshd_vars="PasswordAuthentication PermitRootLogin PubkeyAuthentication"
+
+for var in $sshd_vars;
+do
+  sed -i'' "s/#$var/$var/" /etc/ssh/sshd_config
+done
+
+
+if [[ `cat /etc/redhat-release  | awk '{print $3}'` == "6.3" ]]; then
+  /etc/init.d/sshd restart
+elif [[ `cat /etc/redhat-release  | awk '{print $3}'`  == "5.7" ]]; then
+  /etc/init.d/sshd restart
+elif [[ `cat /etc/redhat-release  | awk '{print $4}'`  == "7.4.1708" ]]; then
+  service sshd restart
+else
+  printf "Version is not matched\n"
+  printf "condition: 6.3 / 5.7 / 7.4.1708\n"
+  cat /etc/redhat-release
+fi
+

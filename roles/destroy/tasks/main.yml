@@ -1,0 +1,20 @@
+---
+
+- name: Check if task is working
+  shell: hostname -f
+  register: full_hostname
+
+- debug: var=full_hostname.stdout_lines
+
+- name: vagrant destory -f
+  shell: "cd {{ vagrant_dir }}/{{ item.key }} && vagrant destroy -f"
+  with_dict: "{{ node_directories }}"
+
+- name: Delete Vagrant directories
+  file:
+    path: "{{ vagrant_dir }}/{{ item.key }}"
+    state: absent
+  with_dict: "{{ node_directories }}"
+
+
+

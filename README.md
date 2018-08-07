@@ -122,9 +122,9 @@ vim ~/playbooks/ansible-workstation-setup/group_vars/vagrant.yml
 # MySQL
 mysql_download_version: "mysql-5.7.18-linux-glibc2.5-x86_64"
 
-mysql_root_db_pass: masteryoda
+mysql_root_db_pass: xxxx
 
-mysql_instance_name: "cloud101"
+mysql_instance_name: "xxxxx"
 
 mysql_port: 3301
 

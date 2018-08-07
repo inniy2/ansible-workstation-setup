@@ -28,7 +28,7 @@ ansible-playbook destroy_os.yml
 
 - - - -  
 2. Example for running adhoc commandline  
-``bash
+```bash
 cd ~/playbooks/ansible-workstation-setup
 
 ansible vagarant  -m shell -a "ls -al /tmp"
@@ -52,8 +52,10 @@ ansible_ssh_user=
 ansible_ssh_pass=
 ```
 
+
 ```bash
 vim ~/playbooks/vagrant
+
 [vagrant:children]
 node1
 node2
@@ -92,7 +94,7 @@ ansible_ssh_pass=vagrant
 vim ~/playbooks/ansible-workstation/group_vars/workstation.yml
 
 ---
-home_dir: "/Users/sangsun.bae"
+home_dir: "/Users/XXXX"
 git_home: "{{ home_dir }}/Documents/git"
 vagrant_dir: "{{ git_home }}/Vagrant"
 c_class_ip: "192.168.33"

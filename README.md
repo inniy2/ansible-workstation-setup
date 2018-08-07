@@ -31,9 +31,9 @@ ansible-playbook destroy_os.yml
 ```bash
 cd ~/playbooks/ansible-workstation-setup
 
-ansible vagarant  -m shell -a "ls -al /tmp"
+ansible vagrant  -m shell -a "ls -al /tmp"
 
-ansible node1     -m shell -a "ls -al /tmp"
+ansible node1    -m shell -a "ls -al /tmp"
 ```
 
 

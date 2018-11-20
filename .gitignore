@@ -8,4 +8,5 @@
 Pipfile
 **/group_vars/*.yml
 **/host_vars/*.yml
+./*.yml
 

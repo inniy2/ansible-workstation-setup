@@ -35,6 +35,6 @@
   shell: "cd {{ vagrant_dir }}/{{ item.key }} && vagrant ssh -c 'sudo chmod 755 /vagrant/restart-sshd.sh && sudo /vagrant/restart-sshd.sh '"
   with_dict: "{{ node_directories }}"
 
-- name: delete lines from /Users/sangsun.bae/.ssh/known_hosts when it matches 192.168.33.*
+- name: delete lines from /Users/XXXXX.bae/.ssh/known_hosts when it matches 192.168.33.*
   shell: "sed -i '' '/{{c_class_ip}}/d' ~/.ssh/known_hosts"
 
